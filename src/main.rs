@@ -6,8 +6,7 @@ use std::process::Command;
 
 use config::{read_config, Config};
 use iced::{
-    widget::{button, column, row, text, Column, Container},
-    Padding, Sandbox, Settings, Theme,
+    widget::{button, column, row, text, Column, Container}, window, Padding, Sandbox, Settings, Theme
 };
 mod config;
 
@@ -19,7 +18,16 @@ pub enum Message {
 }
 
 fn main() -> iced::Result {
-    RustUI::run(Settings::default())
+    let settings = Settings {
+        window: window::Settings {
+            size: iced::Size::new(450.0,250.0),
+            resizable: true,
+            decorations: true,
+            ..Default::default()
+        },
+        ..Default::default()
+    };
+    RustUI::run(settings)
 }
 
 #[derive(Default, Clone)]
