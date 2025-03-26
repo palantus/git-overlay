@@ -20,7 +20,7 @@ pub enum Message {
 fn main() -> iced::Result {
     let settings = Settings {
         window: window::Settings {
-            size: iced::Size::new(450.0,250.0),
+            size: iced::Size::new(450.0,270.0),
             resizable: true,
             decorations: true,
             // position: window::Position::SpecificWith(())
