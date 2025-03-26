@@ -23,6 +23,7 @@ fn main() -> iced::Result {
             size: iced::Size::new(450.0,250.0),
             resizable: true,
             decorations: true,
+            // position: window::Position::SpecificWith(())
             ..Default::default()
         },
         ..Default::default()
@@ -138,19 +139,19 @@ impl Sandbox for RustUI {
             self.repos
                 .iter()
                 .fold(Column::new().padding(padding), |col, repo| {
-                    col.push(text(&repo.name).size(25))
+                    col.push(text(&repo.name).size(24))
                 }),
             // Branch
             self.repos
                 .iter()
                 .fold(Column::new().padding(padding), |col, repo| {
-                    col.push(text(&repo.branch).size(25))
+                    col.push(text(&repo.branch).size(24))
                 }),
             // Num changes
             self.repos
                 .iter()
                 .fold(Column::new().padding(padding), |col, repo| {
-                    col.push(text(&repo.num_changes.to_string()).size(25))
+                    col.push(text(&repo.num_changes.to_string()).size(24))
                 }),
             // Lazygit button
             self.repos
